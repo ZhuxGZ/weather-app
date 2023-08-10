@@ -7,7 +7,7 @@ const WeatherInfo = ({ data }) => {
 
 	console.log(info.region[0]);
 	return (
-		<div>
+		<div className="infoDisplay">
 			<h2>Weather info</h2>
 			{dataValues.map((value) => {
 				return <p key={value}>{`${info[value]}`}</p>;
