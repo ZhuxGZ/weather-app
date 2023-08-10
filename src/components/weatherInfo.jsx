@@ -1,19 +1,21 @@
 const WeatherInfo = ({ data }) => {
-	const info = data;
 	const dataValues = Object.keys(data);
-	if (dataValues.length === 0) {
-		return null;
+	if (dataValues.length !== 0) {
+		return (
+			<div className="infoDisplay">
+				<h2>Weather info</h2>
+				{dataValues.map((value) => {
+					return <p key={value}>{`${data[value]}`}</p>;
+				})}
+			</div>
+		);
+	} else if (!data) {
+		return (
+			<div className="infoDisplay error">
+				<p>Error! Please enter a correct name</p>
+			</div>
+		);
 	}
-
-	console.log(info.region[0]);
-	return (
-		<div className="infoDisplay">
-			<h2>Weather info</h2>
-			{dataValues.map((value) => {
-				return <p key={value}>{`${info[value]}`}</p>;
-			})}
-		</div>
-	);
 };
 
 export default WeatherInfo;

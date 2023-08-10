@@ -41,3 +41,9 @@ form {
 	border: 1px solid lightgray;
 	border-radius: 0 0 10px 10px;
 }
+
+.infoDisplay.error {
+	color: #7e1f1f;
+	background-color: #b04c4c;
+	font-size: 18px;
+}
